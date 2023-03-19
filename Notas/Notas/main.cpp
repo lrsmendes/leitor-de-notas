@@ -1,112 +1,69 @@
-// Raziel.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-// REFAZER COM SUBPROGRAMAS!
-
 #include <iostream>
 #include <stdlib.h>
 #include <locale.h>
 
 using namespace std;
 
+double calcularMedia(double p1, double p2, double t1, double t2 = 0)
+{
+    double media = (p1 + p2 + t1) / 3;
+    return media;
+}
+
 int main()
 {
-	setlocale(LC_ALL, "Portuguese");
-    double P1, P2, T1, T2, media;
-    int CASO;
+    setlocale(LC_ALL, "Portuguese");
 
-    printf("(c)Raziel, 2022\nPortado por Lucas Raziel 2023 para C++\n\n");
+    cout << "v2.0 (c)Raziel, 2022\nPortado por Lucas Raziel 2023 para C++\n\n";
 
-COMECO:
-    printf("1 - Economia e Finanças (Frederico)\n");
-    printf("2 - Sociedade e Tecnologia (Marcelo)\n");
-	printf("3 - Estruturas de Dados (Fernanda)\n");
-	printf("4 - Engenharia de Software II (Simone)\n");
-	printf("5 - Interação Humano Computador (Fábio)\n");
-	printf("6 - Estatística Aplicada (Sávio)");
-IMP:
-	cout << "\n>";
-    scanf("%d", &CASO);
+    while (true) {
+        cout << "Escolha a disciplina:\n";
+        cout << "1 - Economia e Finanças (Frederico)\n";
+        cout << "2 - Sociedade e Tecnologia (Marcelo)\n";
+        cout << "3 - Estruturas de Dados (Fernanda)\n";
+        cout << "4 - Engenharia de Software II (Simone)\n";
+        cout << "5 - Interação Humano Computador (Fábio)\n";
+        cout << "6 - Estatística Aplicada (Sávio)\n";
+        cout << "0 - Sair\n";
+		cout << endl;
 
-    printf("\n");
+        int opcao;
+        cin >> opcao;
 
-    switch (CASO) {
-    
-    case 1:
-N1:
-        printf("P1: ");
-        cin >> P1;
-
-        printf("P2: ");
-        cin >> P2;
-
-        printf("TR: ");
-        cin >> T1;
-
-        media = (P1 + P2 + T1) / 3;
-        cout.precision(2);
-        cout << "\nSua média é de: " << media << std::endl; //imprimir em formato decimal
-
-        if (media < 6) {
-            printf("\nSE FUDEU!\n\n");
+        if (opcao == 0) {
+            break;
         }
 
-        break;
+        double p1, p2, t1, t2 = 0;
+        cout << "Digite as notas:\n";
+		cout << endl;
+        cout << "P1: ";
+        cin >> p1;
+        cout << "P2: ";
+        cin >> p2;
+        cout << "T1: ";
+        cin >> t1;
 
-    case 2:
-        goto N1; //o calculo é o mesmo
-        
-        break;
+        if (opcao == 6) {
+            cout << "NP: ";
+            cin >> t2;
+        }
 
-	case 3:
-		goto N1;
+        double media = (7 * p1 + 7 * p2 + 6 * t1) / 20;
+        cout << cout.precision(2);
+        cout << "\nSua média é de: " << media << endl;
 
-		break;
-
-	case 4:
-		goto N1;
-
-		break;
-
-	case 5:
-		printf("Não implementado.\n");
-		goto IMP;
-
-		break;
-
-	case 6:
-		printf("P1: ");
-		cin >> P1;
-
-		printf("P2: ");
-		cin >> P2;
-
-		printf("NP: ");
-		cin >> T1;
-
-		media = (7 * P1 + 7 * P2 + 6 * T1) / 20;
-		cout.precision(2);
-		cout << "\nSua média é de: " << media << std::endl; //imprimir em formato decimal
-
-		if (media < 6) {
-			printf("\nSE FUDEU!\n\n");
-			}
-
-		break;
-
-    default:
-        cout << "Opção invalida!\n";
-        goto COMECO;
+        if (media < 6) {
+            cout << "\nREPROVADO!\n\n";
+        } else {
+            cout << "\nAPROVADO!\n\n";
+        }
     }
 
-	char escolha = 's';
-	if (escolha == 's'){
-		cout << "Você quer terminar o programa? (S/N)" << "\n>";
-		cin >> escolha;
-		if (escolha == 'n'){
-			goto COMECO;
-		}
-	}
+	cout << endl;
 
-	printf("\nObrigado por utilizar este programa!\n");
-
+    cout << "Obrigado por utilizar este programa!\n";
     system("PAUSE");
+
+    return 0;
 }
