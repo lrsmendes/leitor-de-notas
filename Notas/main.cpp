@@ -1,3 +1,5 @@
+//v3.0 será feita em Visual C++!
+
 #include <iostream>
 #include <stdlib.h>
 #include <locale.h>
@@ -31,6 +33,7 @@ int main()
     setlocale(LC_ALL, "Portuguese");
 
     cout << "v2.0 (c)Raziel, 2022\nPortado por Lucas Raziel 2023 para C++\n\n";
+	double media, p1, p2, t1, t2 = 0;
 
     while (true) {
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -44,6 +47,7 @@ int main()
         cout << "6 - Estatística Aplicada (Sávio)\n";
         cout << "0 - Sair\n";
 		cout << endl;
+		cout << "escolha> ";
 
         int opcao;
         cin >> opcao;
@@ -52,7 +56,6 @@ int main()
             break;
         }
 
-        double p1, p2, t1, t2 = 0;
         cout << "Digite as notas:\n";
 		cout << endl;
         cout << "P1: ";
@@ -62,12 +65,14 @@ int main()
         cout << "T1: ";
         cin >> t1;
 
-        if (opcao == 6) {
-            cout << "NP: ";
-            cin >> t2;
+		if (opcao == 6) {
+			media = (7 * p1 + 7 * p2 + 6 * t1) / 20;
+			goto FIM;
         }
-
-        double media = (7 * p1 + 7 * p2 + 6 * t1) / 20;
+		
+		media = calcularMedia(p1, p2, t1);
+		
+	FIM:
         cout << cout.precision(2);
         cout << "\nSua média é de: " << media << endl;
 
