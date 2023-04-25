@@ -1,4 +1,4 @@
-//v3.0 ser· feita em Visual C++!!!
+//v3.0 ser√° feita em Visual C++!!!
 
 #include <iostream>
 #include <stdlib.h>
@@ -39,12 +39,12 @@ int main()
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		resetarCor(hConsole);
         cout << "Escolha a disciplina:\n";
-        cout << "1 - Economia e FinanÁas (Frederico)\n";
+        cout << "1 - Economia e Finan√ßas (Frederico)\n";
         cout << "2 - Sociedade e Tecnologia (Marcelo)\n";
         cout << "3 - Estruturas de Dados (Fernanda)\n";
         cout << "4 - Engenharia de Software II (Simone)\n";
-        cout << "5 - InteraÁ„o Humano Computador (F·bio)\n";
-        cout << "6 - EstatÌstica Aplicada (S·vio)\n";
+        cout << "5 - Intera√ß√£o Humano Computador (F√°bio)\n";
+        cout << "6 - Estat√≠stica Aplicada (S√°vio)\n";
         cout << "0 - Sair\n";
 		cout << endl;
 		cout << "escolha> ";
@@ -73,8 +73,8 @@ int main()
 		media = calcularMedia(p1, p2, t1);
 		
 	FIM:
-        cout << cout.precision(2);
-        cout << "\nSua mÈdia È de: " << media << endl;
+        cout.precision(2);
+        cout << "\nSua m√©dia √© de: " << media << endl;
 
         if (media < 6) {
 			corVerm(hConsole);
